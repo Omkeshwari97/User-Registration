@@ -71,7 +71,7 @@ public class UserRegistration
         urobj.validName("Abd1");*/
 
         //Email
-        /*urobj.validemail("abc.xyz@bl.co.in");
+        urobj.validemail("abc.xyz@bl.co.in");
         urobj.validemail("abc@bl.co");
         urobj.validemail("abc@yahoo.com");
         urobj.validemail("abc-100@yahoo.com");
@@ -95,7 +95,7 @@ public class UserRegistration
         urobj.validemail("abc.@gmail.com");
         urobj.validemail("abc@abc@gmail.com");
         urobj.validemail("abc@gmail.com.1a");
-        urobj.validemail("abc@gmail.com.aa.au");*/
+        urobj.validemail("abc@gmail.com.aa.au");
 
         //Mobile
         /*urobj.validmobile("91 9876543211");
@@ -106,6 +106,7 @@ public class UserRegistration
         urobj.validmobile("91 1987654321");
         urobj.validmobile("91 9234567890");*/
 
+        /*
         //Password
         //minimum 8 characters 
         urobj.validpassword("abcd1234");
@@ -121,6 +122,6 @@ public class UserRegistration
         //one special character
         urobj.validpassword("abc123Tf");
         urobj.validpassword("1234TEDXKL");
-        
+        */
     }
 }
