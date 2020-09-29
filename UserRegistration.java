@@ -40,6 +40,18 @@ public class UserRegistration
             System.out.println(mobile+" is not valid");
     }
 
+    public void validpassword(String password)
+    {
+        String regex="[a-zA-Z0-9@_-]{8,}";
+        Pattern pattern=Pattern.compile(regex);
+        Matcher matcher=pattern.matcher(password);
+
+        if(matcher.find())
+            System.out.println(password+" is valid");
+        else
+            System.out.println(password+" is not valid");
+    }
+
     public static void main(String[] args)
     {
         UserRegistration urobj=new UserRegistration();
@@ -86,12 +98,20 @@ public class UserRegistration
         urobj.validemail("abc@gmail.com.aa.au");*/
 
         //Mobile
-        urobj.validmobile("91 9876543211");
+        /*urobj.validmobile("91 9876543211");
         urobj.validmobile("919876543211");
         urobj.validmobile("91 98765 43211");
         urobj.validmobile("91 9876543210");
         urobj.validmobile("9876543210");
         urobj.validmobile("91 1987654321");
-        urobj.validmobile("91 9234567890");
+        urobj.validmobile("91 9234567890");*/
+
+        //Password
+        //minimum 8 characters 
+        urobj.validpassword("abcd1234");
+        urobj.validpassword("abcd@123t");
+        urobj.validpassword("1234567");
+        urobj.validpassword("12345678");
+        
     }
 }
