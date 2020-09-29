@@ -28,6 +28,18 @@ public class UserRegistration
             System.out.println(email+" is not valid");
     }
 
+    public void validmobile(String mobile)
+    {
+        String regex="[0-9]{2}[ ][789][0-9]{9}";
+        Pattern pattern=Pattern.compile(regex);
+        Matcher matcher=pattern.matcher(mobile);
+
+        if(matcher.find())
+            System.out.println(mobile+" is valid");
+        else
+            System.out.println(mobile+" is not valid");
+    }
+
     public static void main(String[] args)
     {
         UserRegistration urobj=new UserRegistration();
@@ -47,7 +59,7 @@ public class UserRegistration
         urobj.validName("Abd1");*/
 
         //Email
-        urobj.validemail("abc.xyz@bl.co.in");
+        /*urobj.validemail("abc.xyz@bl.co.in");
         urobj.validemail("abc@bl.co");
         urobj.validemail("abc@yahoo.com");
         urobj.validemail("abc-100@yahoo.com");
@@ -71,7 +83,15 @@ public class UserRegistration
         urobj.validemail("abc.@gmail.com");
         urobj.validemail("abc@abc@gmail.com");
         urobj.validemail("abc@gmail.com.1a");
-        urobj.validemail("abc@gmail.com.aa.au");
+        urobj.validemail("abc@gmail.com.aa.au");*/
 
+        //Mobile
+        urobj.validmobile("91 9876543211");
+        urobj.validmobile("919876543211");
+        urobj.validmobile("91 98765 43211");
+        urobj.validmobile("91 9876543210");
+        urobj.validmobile("9876543210");
+        urobj.validmobile("91 1987654321");
+        urobj.validmobile("91 9234567890");
     }
 }
