@@ -42,7 +42,7 @@ public class UserRegistration
 
     public void validpassword(String password)
     {
-        String regex="[a-zA-Z0-9@_-]{8,}";
+        String regex="^(?=.*[A-Z])[A-Za-z0-9@$!%*?&]{8,}$";
         Pattern pattern=Pattern.compile(regex);
         Matcher matcher=pattern.matcher(password);
 
@@ -109,9 +109,12 @@ public class UserRegistration
         //Password
         //minimum 8 characters 
         urobj.validpassword("abcd1234");
-        urobj.validpassword("abcd@123t");
+        urobj.validpassword("abcd@123");
         urobj.validpassword("1234567");
         urobj.validpassword("12345678");
+        //one upper case
+        urobj.validpassword("aBcd1234");
+        urobj.validpassword("abcd@123T");
         
     }
 }
