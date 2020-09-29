@@ -42,7 +42,7 @@ public class UserRegistration
 
     public void validpassword(String password)
     {
-        String regex="^(?=.*[A-Z])[A-Za-z0-9@$!%*?&]{8,}$";
+        String regex="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9@$!%*?&]{8,}$";
         Pattern pattern=Pattern.compile(regex);
         Matcher matcher=pattern.matcher(password);
 
@@ -115,6 +115,9 @@ public class UserRegistration
         //one upper case
         urobj.validpassword("aBcd1234");
         urobj.validpassword("abcd@123T");
+        //one numeric
+        urobj.validpassword("abcdEFGHo");
+        urobj.validpassword("adc@WERtp_");
         
     }
 }
